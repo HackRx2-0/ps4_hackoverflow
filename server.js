@@ -49,11 +49,11 @@ app.post('/',(req,res)=>{
   pyProcess.stdout.on('end', function(data) {
     //converting result to array of strings
     var recom = dataString.split(/[,]+/);
-
+    console.log(recom)
     //passing result
-    var result = {recommendations:recom};
-    var precision = 0.8;
-    var recall = 0.75;
+    var result = {recommendations:recom.slice(1, recom.length)};
+    var precision = recom[0];
+    var recall = recom[1];
     res.render('dashboard', {result: result, query: query, precision: precision, recall:recall});
   });
 });
