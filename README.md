@@ -29,7 +29,7 @@ cd ps4_hackoverflow
 ```
 pip install -r requirements.txt
 ```
-* Instal Node packages
+* Install Node packages
 ```
 npm install
 ```
@@ -37,7 +37,7 @@ npm install
 ```
 npm start
 ```
-or
+  or
 ```
 node server.js
 ```
