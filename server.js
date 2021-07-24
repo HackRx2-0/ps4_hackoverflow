@@ -51,7 +51,7 @@ app.post('/',(req,res)=>{
     var recom = dataString.split(/[,]+/);
     console.log(recom)
     //passing result
-    var result = {recommendations:recom.slice(1, recom.length)};
+    var result = {recommendations:recom.slice(2, recom.length)};
     var precision = recom[0];
     var recall = recom[1];
     res.render('dashboard', {result: result, query: query, precision: precision, recall:recall});
