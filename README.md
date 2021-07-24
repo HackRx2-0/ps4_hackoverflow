@@ -10,8 +10,9 @@ Simple Python Implementation of recommendation engine
 
 ### Dependencies
 
-* Hardware: Anything with a keyboard and a monitor
 * Python 3.x
+* Node JS
+* EJS
 
 ### Installing
 
