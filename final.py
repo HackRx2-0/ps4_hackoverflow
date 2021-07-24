@@ -15,11 +15,10 @@ ls = df['Word'].tolist()
 words = []
 
 # ENTER QUERY HERE
-subs = 'buy phone'
+subs = 'apply for credit card'
 #res1 = list(i for i in ls if subs in i)
 FINAL = []
 FINAL.append([i for i in ls if subs in i])
-print(FINAL)
 #if empty_set(res1) == False: print (str(res1))
 
 raw = subs.lower()
@@ -50,4 +49,32 @@ for each in words:
                 FINAL.append([i for i in ls if subs in i])
             #print(final)
 
-print(FINAL)
+recall = 0.0
+count_rev=0
+count_tot=0
+for i in ls:
+        if subs in i:
+            count_rev = count_rev+1
+for i in FINAL[1]:
+    if subs in i:
+        count_tot=count_tot+1
+recall = count_tot/count_rev
+print(recall)
+
+precision = 0.0
+count_rev=0
+count_tot=0
+for j in range(2):
+    for i in FINAL[j]:
+        if subs in i:
+            count_rev = count_rev+1
+
+for i in ls:
+        if subs in i:
+            count_tot = count_tot+1
+
+#if duplicates       
+if count_rev>count_tot: count_rev=count_tot
+
+precision = count_rev/count_tot
+print(precision)
