@@ -10,8 +10,6 @@ def read_in():
     # Since our input would only be having one line, parse our JSON data from that
     return json.loads(lines[0])
 
-
-
 def main():
 
     def empty_set(some_set):
@@ -62,8 +60,51 @@ def main():
                     FINAL.append([i for i in ls if subs in i])
                 #print(final)
 
+    new = []
+    i = 0
     for string in FINAL:
-        print(string, end=',')
+        if(i<=100):
+            if len(string) != 0:
+                new.append(string)
+            i=i+1
+        else: break
+
+    # PRECISION and RECALL
+
+    recall = 0.0
+    count_rev=0
+    count_tot=0
+    for i in ls:
+            if subs in i:
+                count_rev = count_rev+1
+    for i in FINAL[1]:
+        if subs in i:
+            count_tot=count_tot+1
+    recall = count_tot/count_rev
+
+    precision = 0.0
+    count_rev=0
+    count_tot=0
+    for j in range(2):
+        for i in FINAL[j]:
+            if subs in i:
+                count_rev = count_rev+1
+
+    for i in ls:
+            if subs in i:
+                count_tot = count_tot+1
+
+    #if duplicates       
+    if count_rev>count_tot: count_rev=count_tot
+
+    precision = count_rev/count_tot
+
+    new = [[precision] + [recall]] + new
+
+    for string in new:
+        if len(string) != 0:
+            print(string, end=',')
+
 
     '''
     lines = read_in()
