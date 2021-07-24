@@ -15,16 +15,33 @@ Simple Python Implementation of recommendation engine
 * EJS
 
 ### Installing
-
-* Clone and set working directory
 * Preferably, create a python system-site virtual environment
 * Activate the venv
-* Install packages from requirements.txt
+* Install NodeJS 
 
 ### Execution
+* Clone and set working directory
 ```
-python recommend.py
+git clone https://github.com/HackRx2-0/ps4_hackoverflow
+cd ps4_hackoverflow
 ```
+* Install Python packages from requirements.txt
+```
+pip install -r requirements.txt
+```
+* Instal Node packages
+```
+npm install
+```
+* Run App
+```
+npm start
+```
+or
+```
+node server.js
+```
+* Open [http://localhost:3000](https://localhost:3000)
 
 ## Help
 Please contact anyone of the authors
